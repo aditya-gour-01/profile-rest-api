@@ -53,3 +53,5 @@ class UserProfile(AbstractBaseUser,PermissionsMixin):
     def __str__(self):
         """Django used this when it needs to convert object to the string"""
         return self.email
+
+    objects = models.Manager()
