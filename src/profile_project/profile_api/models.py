@@ -3,6 +3,8 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.models import BaseUserManager
+from django.contrib.auth.models import UserManager
+
 
 class UserProfileManager(BaseUserManager):
     """helps Django work with our custom user model"""
@@ -55,3 +57,4 @@ class UserProfile(AbstractBaseUser,PermissionsMixin):
         return self.email
 
     objects = models.Manager()
+    objects=UserManager()
